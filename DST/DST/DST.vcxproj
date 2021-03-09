@@ -63,11 +63,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="header\DST.h" />
+    <ClInclude Include="header\List\List.h" />
+    <ClInclude Include="header\List\ListNode.h" />
     <ClInclude Include="header\Vector\Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp\main.cpp" />
-    <ClCompile Include="cpp\Vector\Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

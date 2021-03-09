@@ -24,12 +24,15 @@
     <ClInclude Include="header\DST.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="header\List\ListNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="header\List\List.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp\main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="cpp\Vector\Vector.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <vector>
 
 template <typename T>
 struct increase {
@@ -14,6 +15,7 @@ struct increase {
 int main() {
 	using std::cout;
 	using std::endl;
+
 	DST::Vector<int> v;
 	for(int i = 0; i < 50; ++i) {
 		v.insert(rand() % 50);
