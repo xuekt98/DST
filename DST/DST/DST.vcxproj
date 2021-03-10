@@ -65,6 +65,8 @@
     <ClInclude Include="header\DST.h" />
     <ClInclude Include="header\List\List.h" />
     <ClInclude Include="header\List\ListNode.h" />
+    <ClInclude Include="header\Queue\Queue.h" />
+    <ClInclude Include="header\Stack\Stack.h" />
     <ClInclude Include="header\Vector\Vector.h" />
   </ItemGroup>
   <ItemGroup>
