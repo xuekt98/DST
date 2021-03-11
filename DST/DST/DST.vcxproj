@@ -67,6 +67,8 @@
     <ClInclude Include="header\List\ListNode.h" />
     <ClInclude Include="header\Queue\Queue.h" />
     <ClInclude Include="header\Stack\Stack.h" />
+    <ClInclude Include="header\Tree\BinNode.h" />
+    <ClInclude Include="header\Tree\BinTree.h" />
     <ClInclude Include="header\Vector\Vector.h" />
   </ItemGroup>
   <ItemGroup>

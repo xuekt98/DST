@@ -36,6 +36,12 @@
     <ClInclude Include="header\Queue\Queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="header\Tree\BinNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Tree\BinTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp\main.cpp">
