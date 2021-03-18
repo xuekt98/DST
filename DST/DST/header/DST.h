@@ -1,6 +1,9 @@
 #ifndef DST_H
 #define DST_H
 
+#define NULL nullptr
+#define max(a, b) (((a) > (b)) ? (a) : (b));
+
 namespace DST {
 	typedef int Rank;
 	const static int DEFAULT_CAPACITY = 3;

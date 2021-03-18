@@ -15,7 +15,7 @@ namespace DST {
 			return remove(size() - 1);
 		}
 
-		T& top {
+		T& top() {
 			return (*this)[size() - 1];
 		}
 	};

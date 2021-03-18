@@ -2,6 +2,7 @@
 #define DST_BINTREE_H
 
 #include "BinNode.h"
+#include <memory>
 
 namespace DST {
 	template <typename T>
@@ -13,7 +14,7 @@ namespace DST {
 		void updateHeightAbove(BinNodePosi(T) x);
 
 	public:
-		BinTree() : _size(0), _root(NULL) {}		//构造函数
+		BinTree() : _size(0), _root(nullptr) {}		//构造函数
 		~BinTree() {								//析构函数
 			if(_size > 0) remove(_root);
 		}
@@ -91,6 +92,62 @@ namespace DST {
 		x->insertAsRC(e);
 		updateHeightAbove(x);
 		return x->rc;
+	}
+
+	template <typename T>	//二叉树接入算法:将S作为节点x的左子树接入,S本身置空
+	BinNodePosi(T) BinTree<T>::attachAsLC(BinNodePosi(T) x, BinTree<T>* &S) {
+		if(x->lc = S->_root) x->lc->parent = x;
+		_size += S->_size;
+		updateHeightAbove(x);
+		S->_root = NULL;
+		S->_size = 0;
+		//release(S);
+		S = NULL;
+		return x;
+	}
+
+	template <typename T>	//二叉树接入算法:将S作为节点x的右子树接入,S本身置空
+	BinNodePosi(T) BinTree<T>::attachAsRC(BinNodePosi(T) x, BinTree<T>* &S) {
+		if(x->rc = S->_root) x->rc->parent = x;
+		_size += S->_size;
+		updateHeightAbove(x);
+		S->_root = nullptr;
+		S->_size = 0;
+		//release(S);
+		S = nullptr;
+		return x;
+	}
+
+	template <typename T>	//删除二叉树中位置x处的节点及其后代,返回被删除节点的数值
+	int BinTree<T>::remove(BinNodePosi(T) x) {
+		FromParentTo(*x) = NULL;
+		updateHeightAbove(x->parent);
+		int n = removeAt(x);
+		_size = n;
+		return n;
+	}
+
+	template <typename T>	//二叉树子树分离算法:将子树x从当前树种摘除,将其封装城一棵独立的子树返回
+	BinTree<T>* BinTree<T>::secede(BinNodePosi(T) x) {
+		FromParentTo(*x) = NULL;
+		updateHeightAbove(x->parent);
+		BinTree<T>* S = new BinTree<T>;
+		S->_root = x;
+		x->parent = nullptr;
+		S->_size = x->size();
+		_size -= S->_size;
+		return S;
+	}
+
+
+	/******其他非类内部接口******/
+	template <typename T>	//删除二叉树中位置x处的节点及其后代,返回被删除节点的数值
+	static int removeAt(BinNodePosi(T) x) {
+		if(!x) return 0;
+		int n = 1 + removeAt(x->lc) + removeAt(x->rc);
+		release(x->data);
+		release(x);
+		return n;
 	}
 }
 

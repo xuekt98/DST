@@ -42,6 +42,15 @@
     <ClInclude Include="header\Tree\BinTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="header\Tree\TestBinTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Graph\Graph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Graph\GraphComponent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp\main.cpp">
